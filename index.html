@@ -92,16 +92,18 @@ var groups = [
 timeline = []
 
 var welcome = {
-      type: jsPsychHtmlKeyboardResponse,
-      stimulus: '<h2>Benvenuta/o!</h2> <p> Premi un tasto qualunque per continuare.</p> <p> <img src="http://julianagerard.com/UlsterU/media/ulster.jpg" width="250px" height="auto" align="center"> </p>'
+      type: jsPsychHtmlButtonResponse,
+      stimulus: '<h2>Benvenuta/o!</h2> <p> <img src="http://julianagerard.com/UlsterU/media/ulster.jpg" width="250px" height="auto" align="center"> </p>',
+      choices: ["<em>Procedi all'esperimento</em>"],
     };
 
 timeline.push(welcome)
 
 //prepares them for the consent
 var welcome_2 = {
-      type: jsPsychHtmlKeyboardResponse,
-      stimulus: '<p> Thank you for your interest in this experiment. The experiment will begin shortly, right after you have read the consent form and formally agreed to take part in this study. Thank you!.</p> <p> <em>Press any key to continue.</em></p>'
+      type: jsPsychHtmlButtonResponse,
+      stimulus: '<p> Thank you for your interest in this experiment. The experiment will begin shortly, right after you have read the consent form and formally agreed to take part in this study. Thank you!.</p>',
+      choices: ["<em>Procedi all'esperimento</em>"],
     };
 
 timeline.push(welcome_2)
@@ -118,8 +120,9 @@ timeline.push(consent)
 
 //tells them what they are gonna see
 var instruction_pre = {
-  type: jsPsychHtmlKeyboardResponse,
-      stimulus: '<h3> Thank you!</h3> <p> Now you will be taken to the experiment. First you will be asked to fill a brief questionnaire, and then you will see the instructions for the linguistic part. The whole experiment should last around 15 minutes.</p> <p> <em>Press any key to continue.</em></p>'
+  type: jsPsychHtmlButtonResponse,
+      stimulus: '<h3> Thank you!</h3> <p> Now you will be taken to the experiment. First you will be asked to fill a brief questionnaire, and then you will see the instructions for the linguistic part. The whole experiment should last around 15 minutes.</p>',
+      choices: ["<em>Procedi all'esperimento</em>"],
 
 };
 
