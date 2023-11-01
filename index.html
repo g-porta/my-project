@@ -1,1 +1,284 @@
-<h1>Hello world!</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ricerca linguistica</title>
+        <script src="https://unpkg.com/jspsych@7.3.0"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.1"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.1"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-html-slider-response@1.0.0"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-survey-likert@1.1.2"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-instructions@1.1.3"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-survey-text@1.1.2"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-image-button-response@1.1.2"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-survey-multi-select@1.1.2"></script>
+        <script src="https://unpkg.com/@jspsych/plugin-survey@0.2.1"></script>
+        <link rel="stylesheet" href="https://unpkg.com/@jspsych/plugin-survey@0.1.1/css/survey.css">
+        <link href="https://unpkg.com/jspsych@7.3.0/css/jspsych.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <style>
+	    .jspsych-content {
+	      max-width: 75%;
+	    }
+
+	    .left-aligned {
+	      text-align:left;
+	    }
+	  </style>
+
+    <body></body>
+   <script>
+
+var jsPsych = initJsPsych({
+  on_finish: function () {
+    jsPsych.data.displayData("csv");
+  },
+});
+
+//my stimuli
+var groups = [
+  [
+  { sentence:"List 1 - Item 1"},
+{ sentence:"List 1 - Item 2"},
+{ sentence:"List 1 - Item 3"},
+{ sentence:"List 1 - Item 4"},
+{ sentence:"List 1 - Item 5"},
+{ sentence:"List 1 - Item 6"},
+{ sentence:"List 1 - Item 7"},
+{ sentence:"List 1 - Item 8"},
+{ sentence:"List 1 - Item 9"},
+{ sentence:"List 1 - Item 10"}
+  ],
+  [
+  { sentence:"List 2 - Item 1"},
+{ sentence:"List 2 - Item 2"},
+{ sentence:"List 2 - Item 3"},
+{ sentence:"List 2 - Item 4"},
+{ sentence:"List 2 - Item 5"},
+{ sentence:"List 2 - Item 6"},
+{ sentence:"List 2 - Item 7"},
+{ sentence:"List 2 - Item 8"},
+{ sentence:"List 2 - Item 9"},
+{ sentence:"List 2 - Item 10"}
+  ],
+  [
+  { sentence:"List 3 - Item 1"},
+{ sentence:"List 3 - Item 2"},
+{ sentence:"List 3 - Item 3"},
+{ sentence:"List 3 - Item 4"},
+{ sentence:"List 3 - Item 5"},
+{ sentence:"List 3 - Item 6"},
+{ sentence:"List 3 - Item 7"},
+{ sentence:"List 3 - Item 8"},
+{ sentence:"List 3 - Item 9"},
+{ sentence:"List 3 - Item 10"}
+  ],
+  [
+  { sentence:"List 4 - Item 1"},
+{ sentence:"List 4 - Item 2"},
+{ sentence:"List 4 - Item 3"},
+{ sentence:"List 4 - Item 4"},
+{ sentence:"List 4 - Item 5"},
+{ sentence:"List 4 - Item 6"},
+{ sentence:"List 4 - Item 7"},
+{ sentence:"List 4 - Item 8"},
+{ sentence:"List 4 - Item 9"},
+{ sentence:"List 4 - Item 10"}
+  ]
+]
+
+//creates the timeline, which atm is empty
+timeline = []
+
+var welcome = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: '<h2>Benvenuta/o!</h2> <p> Premi un tasto qualunque per continuare.</p> <p> <img src="http://julianagerard.com/UlsterU/media/ulster.jpg" width="250px" height="auto" align="center"> </p>'
+    };
+
+timeline.push(welcome)
+
+//prepares them for the consent
+var welcome_2 = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: '<p> Thank you for your interest in this experiment. The experiment will begin shortly, right after you have read the consent form and formally agreed to take part in this study. Thank you!.</p> <p> <em>Press any key to continue.</em></p>'
+    };
+
+timeline.push(welcome_2)
+
+//consent
+var consent = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus:
+    "<h3>Consent form</h3> <div align=left> <p><strong>Project title</strong>: Extraction from Italian Adverbial Clauses</span></span></span></p> <p><strong>Researcher</strong>: Gianluca Porta (<a href='mailto:porta-g@ulster.ac.uk'>porta-g@ulster.ac.uk</a>)</p> <p><strong>Supervisory team</strong>: Prof. Raffaella Folli (<a href='mailto: r.folli@ulster.ac.uk'>r.folli@ulster.ac.uk</a>), Dr. Christina Sevdali (<a href='mailto: c.sevdali@ulster.ac.uk'>c.sevdali@ulster.ac.uk</a>), Dr. Richard Stockwell (<a href='mailto: r.stockwell@ulster.ac.uk'>r.stockwell@ulster.ac.uk</a>).</p> <p><strong>Introduction</strong> <br> You are being asked to participate in a research study about Italian. The purpose of this study is to gather data regarding the grammaticality of long-distance movement. This data will increase our understanding of a specific syntactic phenomenon. </p> <p><strong>Procedure</strong> <br> As a participant in this study, you will be asked to perform two tasks:<ol> <li>Fill a demographic questionnaire. The questionnaire will ask you about your age range, your level of education, the region you are from, and your current employment. This information will allow the named researcher to see language change in action.</li><li>Evaluate sentences using a 7-points Likert scale. This is an acceptability judgement task. You will be asked to rate the sentences on the basis of your language intuitions. </li></ol>Your participation is voluntary, and you can choose to withdraw at any time. </p> <p><strong>Confidentiality</strong> <br> Only the named researchers will have access to the data gathered via this experiment. Prior usage of the results (for teaching, publications, conferences), data will be anonymised. If individual results are discussed, no reference to your personal identity can be made.</p> <p><strong>Inducements</strong> <br>You will not be paid for your participation in this study.</p> <p><strong>Contact</strong><br> Please contact <a href='mailto:porta-g@ulster.ac.uk'>porta-g@ulster.ac.uk</a> for any questions you might have about this study.</p> <p><strong>Consent</strong> <br>By proceeding with the experiment, you consent to have read the you consent to have read the consent form and you agree to take part in the research study detailed above.</p>",
+  choices: ["Yes, I consent to the above"],
+};
+
+timeline.push(consent)
+
+//tells them what they are gonna see
+var instruction_pre = {
+  type: jsPsychHtmlKeyboardResponse,
+      stimulus: '<h3> Thank you!</h3> <p> Now you will be taken to the experiment. First you will be asked to fill a brief questionnaire, and then you will see the instructions for the linguistic part. The whole experiment should last around 15 minutes.</p> <p> <em>Press any key to continue.</em></p>'
+
+};
+
+timeline.push(instruction_pre)
+
+//demographics info
+var bio_info = {
+  type: jsPsychSurvey,
+  pages: [
+    [
+      {
+        type: 'html',
+        prompt: 'Please answer the following questions:',
+      },
+      {
+        type: 'multi-select',
+        prompt: "How old are you?",
+        name: 'age',
+        options: ["18-24", "25-34", "35-44", "45-54", "55-64", "65 or older"],
+        required: true
+      },
+      {
+        type: 'drop-down',
+        prompt: "Where are you from?",
+        name: 'region',
+        options: ['Abruzzo', 'Basilicata', 'Calabria', 'Campania', 'Emilia Romagna', 'Fiuli Venezia Giulia', 'Lazio', 'Liguria', 'Lombardia', 'Marche', 'Molise', 'Piemonte', 'Puglia', 'Sardegna', 'Sicilia', 'Toscana', 'Trentino Alto Adige', 'Umbria', 'Val d\'Aosta', 'Veneto'],
+        required: true,
+      },
+      {
+        type: 'multi-select',
+        prompt: "What is your level of education?",
+        name: 'education',
+        options: ['High School', 'BA', 'MA', 'Master Universitario di I/II livello', 'PhD'],
+        required: true,
+      },
+      {
+        type: 'drop-down',
+        prompt: "What is your job?",
+        name: 'job',
+        options: ['Job 1', 'Job 2', 'Job 3'],
+        required: true,
+      }
+    ]
+  ],
+};
+
+
+timeline.push(bio_info)
+
+//instructions on what they have to do
+var instructions = {
+type: jsPsychInstructions,
+pages: ['  <h2>Instructions</h2> <div align=left> <p>This experiment tests the grammaticality of some Italian sentences. </p> <div align=left> <p>You will now read some practice sentences. </p>    <p>Below each sentence, you will see a scale from 1 to 7. </p>    <p>Please rate how natural it sounds to you by choosing a number between 1 and 7 (with 1 bad and 7 good). </p><p><b>You should answer as quickly but accurately as possible, and use the full 1-7 scale.</b></p><p>Please rely on your first reaction, without trying to analyze the sentence.</p><p>There is no single right answer; please use your own intuitions to choose a rating.</p></div>', ' <h3> Examples </h3> <div align=left> <p>Now you will see some practice sentences. </p><p> This is an example of a <strong>grammatical</strong> sentence:<ul><li>Maria ha comprato il maglione rosso che pensavo di regalarle.</li></ul>This is an example of a sentence that is <strong>not grammatical</strong>: <ul><li>Maria che voglio regalarle il maglione rosso lo prendeva.</li></ul><strong>Long</strong> sentences can be <strong>grammatical</strong>: <ul> <li> Mio pap&agrave; ha comprato il cane che mi piaceva nel negozio di animali che si trova in fondo a Via Roma.</li> </ul>And <strong>short</strong> sentences can be <strong>ungrammatical</strong>: <ul> <li> Mia pap&agrave; comprarono il cane.</li></ul></p>'],
+show_clickable_nav: true,
+allow_backward: true,
+};
+
+timeline.push(instructions)
+
+var btn_html = '<button class="jspsych-btn">%choice%</button>' //nice buttons
+
+//practice sentences
+var trial_practice = { 
+  type: jsPsychHtmlButtonResponse,
+  prompt:
+    "<p><em>Could this sentence be spoken by a native speaker of Italian?</em></p>",
+   choices: ["1", "2", "3", "4", "5", "6", "7"],
+    stimulus: jsPsych.timelineVariable("sentence_practice"),
+    button_html: ['<p>Bad        <button class="jspsych-btn">%choice%</button></p>', btn_html, btn_html, btn_html, btn_html, btn_html, '<p><button class="jspsych-btn">%choice%</button>        Good</p>']
+};
+
+var trial_practice_1 = { 
+timeline: [trial_practice],
+		  timeline_variables: [
+      { sentence_practice:"Practice sentence 1"},
+      { sentence_practice:"Practice sentence 2"},
+            ], 
+		};
+
+timeline.push(trial_practice_1)
+
+//final instruction screen: now they can begin
+var instructions_final = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus:'<p>Good! </p><p>Now we will begin the experiment.</p>',
+  choices: ['Next'],
+prompt: ""
+};
+
+timeline.push(instructions_final)
+
+//trial structure
+var trial_structure = { //the actual survey
+  type: jsPsychHtmlButtonResponse,
+  prompt:
+    "<p><em>Could this sentence be spoken by a native speaker of Italian?</em></p>",
+   choices: ["1", "2", "3", "4", "5", "6", "7"],
+    stimulus: jsPsych.timelineVariable("sentence"),
+    button_html: ['<p>Bad        <button class="jspsych-btn">%choice%</button></p>', btn_html, btn_html, btn_html, btn_html, btn_html, '<p><button class="jspsych-btn">%choice%</button>        Good</p>']
+};
+
+ var trial_1 = {
+timeline: [trial_structure],
+		  timeline_variables: groups[Math.floor(Math.random() * groups.length)] //takes a random group, feeds the sentences to the survey
+		};
+
+timeline.push(trial_1)
+
+
+/*
+// Ingrid's pratice sentences
+var likert_scale = [ 
+	            "1 - Dårlig", 
+	            "2", 
+	            "3", 
+	            "4", 
+	            "5", 
+				"6", 
+				"7 - God"
+	        ];
+
+var practice_trials = {
+			timeline: [
+				{
+					type: jsPsychHtmlSliderResponse,
+	        		button_label: "Neste",
+	        		stimulus: function(){
+                		var html=`<p style="color:blue;">Hvor akseptabel synes du denne setninga er?</p>`;
+                		html += "<p><b><i>"+jsPsych.timelineVariable('practice_sentence')+"</i></b></p>";
+						html += "<p>&nbsp;</p>";
+                		return html;
+					},
+	        		labels: likert_scale,
+	        		min: 1,
+	        		max: 7,
+	        		slider_start: 4,
+	        		data: {
+	            		type: "Practice",
+	        		}
+				}
+			],
+			timeline_variables: [
+				{practice_sentence: 'Line jobber med elever som elsker å lære nye ting.'},
+				{practice_sentence: 'Karl snakker om hund han fikk da han var ung.'}
+			]
+	    };
+	    timeline.push(practice_trials);  
+*/
+//a nice thank you
+var exit_message = {
+			type: jsPsychHtmlButtonResponse,
+			stimulus: '<h2> Thank you! </h2> <p>All done! Thank you so much for your time and help</p> <p> Do you have any question? Please contact Gianluca Porta at <a href="mailto:porta-g@ulster.ac.uk">porta-g@ulster.ac.uk</a>.',
+			choices: ['Done']
+		};
+
+timeline.push(exit_message)
+
+jsPsych.run(timeline);
+
+   </script>
+
+</html>
