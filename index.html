@@ -93,8 +93,8 @@ timeline = []
 
 var welcome = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: '<h2>Benvenuta/o!</h2> <p> <img src="http://julianagerard.com/UlsterU/media/ulster.jpg" width="250px" height="auto" align="center"> </p>',
-      choices: ["<em>Procedi all'esperimento</em>"],
+      stimulus: '<h2>Benvenuta/o!</h2> <p> <img src="https://julianagerard.com/UlsterU/media/ulster.jpg" width="250px" height="auto" align="center"> </p>',
+      choices: ["<em>Avanti</em>"],
     };
 
 timeline.push(welcome)
@@ -102,8 +102,8 @@ timeline.push(welcome)
 //prepares them for the consent
 var welcome_2 = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: '<p> Thank you for your interest in this experiment. The experiment will begin shortly, right after you have read the consent form and formally agreed to take part in this study. Thank you!.</p>',
-      choices: ["<em>Procedi all'esperimento</em>"],
+      stimulus: '<h4> Grazie per il tuo interesse! </h4> <p>L\’esperimento inizierà a breve. Prima di iniziarlo, dovrai leggere il modulo per il consenso e accettare formalmente di partecipare a questo studio.</p>',      
+      choices: ["<em>Procedi al modulo per il consenso</em>"],
     };
 
 timeline.push(welcome_2)
@@ -112,8 +112,8 @@ timeline.push(welcome_2)
 var consent = {
   type: jsPsychHtmlButtonResponse,
   stimulus:
-    "<h3>Consent form</h3> <div align=left> <p><strong>Project title</strong>: Extraction from Italian Adverbial Clauses</span></span></span></p> <p><strong>Researcher</strong>: Gianluca Porta (<a href='mailto:porta-g@ulster.ac.uk'>porta-g@ulster.ac.uk</a>)</p> <p><strong>Supervisory team</strong>: Prof. Raffaella Folli (<a href='mailto: r.folli@ulster.ac.uk'>r.folli@ulster.ac.uk</a>), Dr. Christina Sevdali (<a href='mailto: c.sevdali@ulster.ac.uk'>c.sevdali@ulster.ac.uk</a>), Dr. Richard Stockwell (<a href='mailto: r.stockwell@ulster.ac.uk'>r.stockwell@ulster.ac.uk</a>).</p> <p><strong>Introduction</strong> <br> You are being asked to participate in a research study about Italian. The purpose of this study is to gather data regarding the grammaticality of long-distance movement. This data will increase our understanding of a specific syntactic phenomenon. </p> <p><strong>Procedure</strong> <br> As a participant in this study, you will be asked to perform two tasks:<ol> <li>Fill a demographic questionnaire. The questionnaire will ask you about your age range, your level of education, the region you are from, and your current employment. This information will allow the named researcher to see language change in action.</li><li>Evaluate sentences using a 7-points Likert scale. This is an acceptability judgement task. You will be asked to rate the sentences on the basis of your language intuitions. </li></ol>Your participation is voluntary, and you can choose to withdraw at any time. </p> <p><strong>Confidentiality</strong> <br> Only the named researchers will have access to the data gathered via this experiment. Prior usage of the results (for teaching, publications, conferences), data will be anonymised. If individual results are discussed, no reference to your personal identity can be made.</p> <p><strong>Inducements</strong> <br>You will not be paid for your participation in this study.</p> <p><strong>Contact</strong><br> Please contact <a href='mailto:porta-g@ulster.ac.uk'>porta-g@ulster.ac.uk</a> for any questions you might have about this study.</p> <p><strong>Consent</strong> <br>By proceeding with the experiment, you consent to have read the you consent to have read the consent form and you agree to take part in the research study detailed above.</p>",
-  choices: ["Yes, I consent to the above"],
+    "<h3>Modulo per il consenso</h3> <div align=left> <p><strong>Project title</strong>: Estrazione da aggiunti sintattici in italiano</span></span></span></p> <p><strong>Ricercatore</strong>: Gianluca Porta (<a href='mailto:porta-g@ulster.ac.uk'>porta-g@ulster.ac.uk</a>)</p> <p><strong>Relatori</strong>: Prof. Raffaella Folli (<a href='mailto: r.folli@ulster.ac.uk'>r.folli@ulster.ac.uk</a>), Dr. Christina Sevdali (<a href='mailto: c.sevdali@ulster.ac.uk'>c.sevdali@ulster.ac.uk</a>), Dr. Richard Stockwell (<a href='mailto: r.stockwell@ulster.ac.uk'>r.stockwell@ulster.ac.uk</a>).</p> <p><strong>Introduzione</strong> <br> Stai per prendere parte a un esperimento linguistico sull’italiano. Questo studio vuole raccogliere dati sulla creazione di filler-gap dependencies negli aggiunti sintattici. Questi dati saranno usati per investigare il fenomeno delle isole sintattiche.</p> <p><strong>Procedimento</strong> <br> L\’esperimento si divide in due parti:<ol> <li>Nella prima parte ti sarà chiesto di compilare di un questionario demografico. Il questionario raccoglie informazioni sulla tua età, sul tuo livello di educazione, sulla tua conoscenza dell’inglese, e sulla regione nella quale sei cresciuto. Queste informazioni aiuteranno i ricercatori coinvolti in questo studio ad analizzare il cambiamento linguistico in atto.</li><li>Nella seconda parte dovrai valutare delle frasi usando una scala a 7 punti. Nella letteratura scientifica, questo tipo di azione si chiama giudizio di accettabilità. Ti sarà chiesto di valutare queste frasi a partire dalla tua intuizione linguistica.</li></ol>La partecipazione a questo studio è volontaria, e puoi scegliere di ritirarti dallo studio in qualunque momento chiudendo il browser.</p> <p><strong>Riservatezza</strong> <br>Soltanto i ricercatori i cui nomi sono stati presentati all’inizio di questa pagina potranno accedere ai dati dell’esperimento. Prima di qualsiasi utilizzo dei risultati (per insegnamento universitario, pubblicazioni scientifiche, o per conferenze) i dati saranno resi anonimi.</p> <p><strong>Rimborso</strong> <br>Non sono previsti rimborsi economici per la partecipazione a questo studio.</p> <p><strong>Contatti</strong><br> Contatta Gianluca Porta (<a href='mailto:porta-g@ulster.ac.uk'>porta-g@ulster.ac.uk</a>) per qualsiasi domanda relativa all\’esperimento.</p> <p><strong>Consenso</strong> <br>Procedendo all’esperimento, confermi di aver letto il modulo del consenso e di accettarne i termini, e confermi di voler prendere parte allo studio sopracitato.</p>",
+  choices: ["Acconsento"],
 };
 
 timeline.push(consent)
@@ -121,7 +121,7 @@ timeline.push(consent)
 //tells them what they are gonna see
 var instruction_pre = {
   type: jsPsychHtmlButtonResponse,
-      stimulus: '<h3> Thank you!</h3> <p> Now you will be taken to the experiment. First you will be asked to fill a brief questionnaire, and then you will see the instructions for the linguistic part. The whole experiment should last around 15 minutes.</p>',
+      stimulus: '<h3> Grazie!</h3> <p> Ora sarai portato all\'esperimento.</p><p> L\'intero esperimento dura circa 15 minuti. Prima ci sarà il questionario demografico e, a seguire, le istruzioni per la parte linguistica e la parte lingusitica.</p>',
       choices: ["<em>Procedi all'esperimento</em>"],
 
 };
@@ -135,47 +135,68 @@ var bio_info = {
     [
       {
         type: 'html',
-        prompt: 'Please answer the following questions:',
+        prompt: 'Per favore, rispondi alle seguenti domande:',
       },
       {
-        type: 'multi-select',
-        prompt: "How old are you?",
+        type: 'multi-choice',
+        prompt: "Quanti anni hai?",
         name: 'age',
-        options: ["18-24", "25-34", "35-44", "45-54", "55-64", "65 or older"],
+        options: ["18-24", "25-34", "35-44", "45-54", "55-64", "65 or più anziano"],
         required: true
       },
       {
         type: 'drop-down',
-        prompt: "Where are you from?",
+        prompt: "Qual è il tuo genere?",
+        name: 'gender',
+        options: ["Uomo", "Donna", "Non-binario", "Altro", "Preferisco non dirlo",],
+        required: true
+      },
+      {
+        type: 'drop-down',
+        prompt: "In quale regione sei cresciuto?",
         name: 'region',
         options: ['Abruzzo', 'Basilicata', 'Calabria', 'Campania', 'Emilia Romagna', 'Fiuli Venezia Giulia', 'Lazio', 'Liguria', 'Lombardia', 'Marche', 'Molise', 'Piemonte', 'Puglia', 'Sardegna', 'Sicilia', 'Toscana', 'Trentino Alto Adige', 'Umbria', 'Val d\'Aosta', 'Veneto'],
         required: true,
       },
       {
-        type: 'multi-select',
-        prompt: "What is your level of education?",
-        name: 'education',
-        options: ['High School', 'BA', 'MA', 'Master Universitario di I/II livello', 'PhD'],
+        type: 'drop-down',
+        prompt: "Qual è il tuo livello di conoscenza dell'inglese?",
+        name: 'english_level',
+        options: ['Nullo', 'Basso (A1 e A2)', 'Medio (B1 e B2)', 'Alto (C1 e C2)'],
         required: true,
       },
       {
-        type: 'drop-down',
-        prompt: "What is your job?",
-        name: 'job',
-        options: ['Job 1', 'Job 2', 'Job 3'],
+        type: 'text',
+        prompt: "Parli altre lingue?", 
+        placeholder: 'Francesce, Tedesco, Spagnolo, Giapponese...',
+        name: 'other_languages', 
+        required: false,
+      },
+      {
+        type: 'multi-choice',
+        prompt: "Qual è il tuo livello di educazione? Seleziona il titolo di livello più alto conseguito.",
+        name: 'education',
+        options: ['Maturità', 'Laurea Triennale', 'Laurea Magistrale', 'Master Universitario di I/II livello', 'Dottorato', 'Altro'],
         required: true,
-      }
+      },
+      {
+        type: 'multi-choice',
+        prompt: "Hai difficoltà linguistiche?",
+        name: 'language_difficulty',
+        options: ['Sì', 'No'],
+        required: true,
+      },
+
     ]
   ],
 };
-
 
 timeline.push(bio_info)
 
 //instructions on what they have to do
 var instructions = {
 type: jsPsychInstructions,
-pages: ['  <h2>Instructions</h2> <div align=left> <p>This experiment tests the grammaticality of some Italian sentences. </p> <div align=left> <p>You will now read some practice sentences. </p>    <p>Below each sentence, you will see a scale from 1 to 7. </p>    <p>Please rate how natural it sounds to you by choosing a number between 1 and 7 (with 1 bad and 7 good). </p><p><b>You should answer as quickly but accurately as possible, and use the full 1-7 scale.</b></p><p>Please rely on your first reaction, without trying to analyze the sentence.</p><p>There is no single right answer; please use your own intuitions to choose a rating.</p></div>', ' <h2> Examples </h2> <div align=left> <p>Now you will see some practice sentences. </p><p> This is an example of a <strong>grammatical</strong> sentence:<ul><li>Maria ha comprato il maglione rosso che pensavo di regalarle.</li></ul>This is an example of a sentence that is <strong>not grammatical</strong>: <ul><li>Maria che voglio regalarle il maglione rosso lo prendeva.</li></ul><strong>Long</strong> sentences can be <strong>grammatical</strong>: <ul> <li> Mio pap&agrave; ha comprato il cane che mi piaceva nel negozio di animali che si trova in fondo a Via Roma.</li> </ul>And <strong>short</strong> sentences can be <strong>ungrammatical</strong>: <ul> <li> Mia pap&agrave; comprarono il cane.</li></ul></p>'],
+pages: ['  <h2>Istruzioni</h2> <div align=left> <p>Lo scopo di questo esperimento è testare l\’accettabilità di alcune frasi in italiano.</p> <div align=left> <p>Adesso ti saranno presentate alcune frasi di prova. </p> <p>Sotto ogni frase troverei una scala, da 1 a 7. 1 è una frase totalmente inaccettabile, 7 è una frase perfettamente accettabile. Tenendo a mente questa distinzione, valuta come la frase ti sembra.</p><p>Rispondi il più <b>rapidamente</b> possibile, cercando di essere <b>accurata/o</b>. Ricordati di <b>usare l\’intera scala (1-7)</b>.</p><p>Basati unicamente sulla tua prima reazione, senza analizzare la frase.</p><p><b>Non ci sono risposte giuste e risposte sbagliate</b>: usa la tua intuizione per scegliere che voto dare alla frase. <p>Ogni frase verrà mostrata una volta e, dopo aver dato il voto, l\’esperimento passerà in automatico alla frase successiva. Una volta data un voto non si può tornare indietro.</p></div>', ' <h2> Esempi </h2> <div align=left> <p>Adesso vedrai qualche frase di esempio. </p><p> Questa è una frase <strong>accettabile</strong>:<ul><li>Maria ha comprato il maglione rosso che pensavo di regalarle a Natale.</li></ul>Questa, invece, è un frase <strong>inaccettabile</strong>: <ul><li>Maria che voglio regalarle il maglione rosso lo prendeva.</li></ul></p><p>Frasi <strong>lunghe</strong> possono <strong>accettabili</strong>: <ul> <li> Mio papà ha comprato il cane che mi piaceva nel negozio di animali che si trova in fondo a Via Roma.</li> </ul>E frasi <strong>brevi</strong> possono essere <strong> inaccettabili </strong>: <ul> <li> Mia papà comprarono il cane.</li></ul></p>'],
 show_clickable_nav: true,
 allow_backward: true,
 };
@@ -185,21 +206,21 @@ timeline.push(instructions)
 var btn_html = '<button class="jspsych-btn">%choice%</button>' //nice buttons
 
 //practice sentences
-var trial_practice = { 
+var trial_practice = {
   type: jsPsychHtmlButtonResponse,
   prompt:
-    "<p><em>Could this sentence be spoken by a native speaker of Italian?</em></p>",
+    "<p><em>Un parlante nativo di italiano pronuncerebbe questa frase?</em></p>",
    choices: ["1", "2", "3", "4", "5", "6", "7"],
     stimulus: jsPsych.timelineVariable("sentence_practice"),
-    button_html: ['<p>Bad        <button class="jspsych-btn">%choice%</button></p>', btn_html, btn_html, btn_html, btn_html, btn_html, '<p><button class="jspsych-btn">%choice%</button>        Good</p>']
+    button_html: ['<p>Pessima        <button class="jspsych-btn">%choice%</button></p>', btn_html, btn_html, btn_html, btn_html, btn_html, '<p><button class="jspsych-btn">%choice%</button>        Ottima</p>']
 };
 
-var trial_practice_1 = { 
+var trial_practice_1 = {
 timeline: [trial_practice],
 		  timeline_variables: [
-      { sentence_practice:"Practice sentence 1"},
-      { sentence_practice:"Practice sentence 2"},
-            ], 
+      { sentence_practice:"Practice sentence 1"}, //bad
+      { sentence_practice:"Practice sentence 2"}, //good
+            ],
 		};
 
 timeline.push(trial_practice_1)
@@ -207,7 +228,7 @@ timeline.push(trial_practice_1)
 //final instruction screen: now they can begin
 var instructions_final = {
   type: jsPsychHtmlButtonResponse,
-  stimulus:'<p>Good! </p><p>Now we will begin the experiment.</p>',
+  stimulus:'<p>Ottimo! </p><p>Ora inizia l\'esperimento.</p>',
   choices: ['Next'],
 prompt: ""
 };
@@ -218,10 +239,10 @@ timeline.push(instructions_final)
 var trial_structure = { //the actual survey
   type: jsPsychHtmlButtonResponse,
   prompt:
-    "<p><em>Could this sentence be spoken by a native speaker of Italian?</em></p>",
+    "<p><em>Un parlante nativo di italiano pronuncerebbe questa frase?</em></p>",
    choices: ["1", "2", "3", "4", "5", "6", "7"],
     stimulus: jsPsych.timelineVariable("sentence"),
-    button_html: ['<p>Bad        <button class="jspsych-btn">%choice%</button></p>', btn_html, btn_html, btn_html, btn_html, btn_html, '<p><button class="jspsych-btn">%choice%</button>        Good</p>']
+    button_html: ['<p>Pessima        <button class="jspsych-btn">%choice%</button></p>', btn_html, btn_html, btn_html, btn_html, btn_html, '<p><button class="jspsych-btn">%choice%</button>        Ottima</p>']
 };
 
  var trial_1 = {
@@ -234,13 +255,13 @@ timeline.push(trial_1)
 
 /*
 // Ingrid's pratice sentences
-var likert_scale = [ 
-	            "1 - Dårlig", 
-	            "2", 
-	            "3", 
-	            "4", 
-	            "5", 
-				"6", 
+var likert_scale = [
+	            "1 - Dårlig",
+	            "2",
+	            "3",
+	            "4",
+	            "5",
+				"6",
 				"7 - God"
 	        ];
 
@@ -269,18 +290,18 @@ var practice_trials = {
 				{practice_sentence: 'Karl snakker om hund han fikk da han var ung.'}
 			]
 	    };
-	    timeline.push(practice_trials);  
+	    timeline.push(practice_trials);
 */
 //a nice thank you
 var exit_message = {
 			type: jsPsychHtmlButtonResponse,
-			stimulus: '<h2> Thank you! </h2> <p>All done! Thank you so much for your time and help</p> <p> Do you have any question? Please contact Gianluca Porta at <a href="mailto:porta-g@ulster.ac.uk">porta-g@ulster.ac.uk</a>.',
-			choices: ['Done']
+			stimulus: '<h2> Grazie! </h2> <p>Finito! Grazie mille per il tuo tempo e per l\'aiuto.</p> <p> Hai qualche domanda? Contatta Gianluca Porta a <a href="mailto:porta-g@ulster.ac.uk">porta-g@ulster.ac.uk</a>. </p>',
+			choices: ['Finito']
 		};
 
 timeline.push(exit_message)
-
 jsPsych.run(timeline);
+
 
    </script>
 
